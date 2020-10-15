@@ -4,7 +4,7 @@ Web application created using Flask framework and MongoDB. This is a skeleton pr
 ## App Functions
 The app covers user authentication, registration, password encryption and storage with MongoDB. There are 3 pages in the app: 
 
-<b>Login Page<b>
+<b>Login Page</b>
 <p align="center">
   <br>
   <img height="400" width="800" src="img/login.PNG">
@@ -13,7 +13,7 @@ The app covers user authentication, registration, password encryption and storag
 </p>
 
 
-<b>Registration Page<b>
+<b>Registration Page</b>
 <p align="center">
   <br>
   <img height="400" width="800" src="img/register.PNG">
@@ -23,10 +23,10 @@ The app covers user authentication, registration, password encryption and storag
 </p>
 
 
-<b>Home Page<b>
+<b>Home Page</b>
 <p align="center">
   <br>
-  <img height="400" width="800" src="img/home.PNG">
+  <img src="img/home.PNG">
   <br>
   <i>The home page after the user has been authenticated. A logout button is set to log the user out back to the login page.</i>
 </p>
