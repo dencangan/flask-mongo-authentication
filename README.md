@@ -2,9 +2,35 @@
 Web application created using Flask framework and MongoDB. This is a skeleton project integrating the Flask framework with MongoDB unlike using traditional relational databases like SQLlite3.
 
 ## App Functions
-The app contains 2 main functionalities:
-- Login
-- Registration
+The app covers user authentication, registration, password encryption and storage with MongoDB. There are 3 pages in the app: 
+
+<b>Login Page<b>
+<p align="center">
+  <br>
+  <img height="400" width="800" src="img/login.PNG">
+  <br>
+  <i>The main login page to enter credentials that will handle the validation and link redirection.</i>
+</p>
+
+
+<b>Registration Page<b>
+<p align="center">
+  <br>
+  <img height="400" width="800" src="img/register.PNG">
+  <br>
+  <i>The registration page to handle creation/storage of user details and password encryption in MongoDB.</i>
+</p>
+</p>
+
+
+<b>Home Page<b>
+<p align="center">
+  <br>
+  <img height="400" width="800" src="img/home.PNG">
+  <br>
+  <i>The home page after the user has been authenticated. A logout button is set to log the user out back to the login page.</i>
+</p>
+</p>
 
 ## Some required files
 ### config.py
