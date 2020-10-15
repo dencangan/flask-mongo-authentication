@@ -21,7 +21,7 @@ def load_user(username):
 def login():
     """Main login logic."""
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
     login_form = LoginForm()
     if login_form.validate_on_submit():
