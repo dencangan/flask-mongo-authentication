@@ -1,5 +1,5 @@
 # flask-mongo
-Web application created using Flask framework and MongoDB. This is a skeleton project integrating the Flask framework with MongoDB unlike using traditional relational databases like SQlite3. This project assumes that you have some basic knowledge in MongoDB (PyMongo collections) and Flask.
+This is a skeleton web application integrating the Flask framework with MongoDB unlike using traditional relational databases like SQlite3. This project assumes that you have some basic knowledge in MongoDB (PyMongo collections) and Flask.
 
 #### TODO
 - Dockerise the app
@@ -50,7 +50,7 @@ The four required items are listed below:
 > - get_id(): a method that returns a unique identifier for the user as a string.
 
 ### User object
-These are defined as static methods in the User object. Our database collection name is called "user_details".
+These are defined as static methods in the object. Our database collection name is called "user_details".
 ```python
 class User:
     """User object that can be manipulated with mongo."""
@@ -77,7 +77,7 @@ class User:
 ```
 
 ### User Registration
-As we are using a NoSQL type database to handle user details storage, a step is required to store the details in a dictionary before inserting it into the mongo collection (see to_dict()). The password stored in the database is of course, hashed.
+A step is required to store the details in a dictionary (NoSQL style) before inserting it into the mongo collection (see to_dict()). The password stored in the database is of course, hashed.
 ```python
   def register(self):
       """Inserting user details into mongo collection."""
