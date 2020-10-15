@@ -40,7 +40,7 @@ The app covers user authentication, registration, password encryption and storag
 ## How It Works
 The main modules to look at is 'models.py' and 'auth/routes.py'. As we are using a noSQL database, we have to build our 'User' object slightly differently from the conventional SQL style.
 
-From Miguel Grinberg's tutorial on using Flask-login:
+From [Miguel Grinberg's](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins) tutorial on using Flask-login:
 
 > The Flask-Login extension works with the application's user model, and expects certain properties and methods to be implemented in it. 
 The four required items are listed below:
@@ -95,7 +95,7 @@ A step is required to store the details in a dictionary (NoSQL style) before ins
 ```
 
 ### Password Encryption
-As for password encryption, we will be using the package Werkzeug with their inbuilt security hashing functions.
+As for password encryption, we will be using the package [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) with their inbuilt security hashing functions.
 ```python
 @classmethod
 def set_password(cls, password):
