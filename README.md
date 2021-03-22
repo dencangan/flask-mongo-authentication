@@ -11,7 +11,7 @@ The app covers user authentication, registration, password encryption and storag
   <br>
   <i>The main login page to enter credentials that will handle the validation and link redirection.</i>
 </p>
-
+<br>
 
 <b>Registration Page</b>
 <p align="center">
@@ -21,7 +21,7 @@ The app covers user authentication, registration, password encryption and storag
   <i>The registration page to handle creation/storage of user details and password encryption in MongoDB.</i>
 </p>
 </p>
-
+<br>
 
 <b>Home Page</b>
 <p align="center">
