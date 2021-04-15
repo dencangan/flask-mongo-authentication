@@ -3,9 +3,11 @@
 from flask import Flask
 from config import Config
 from flask_login import LoginManager
-from flask_pymongo import PyMongo
 
+# PyMongo is not actually needed, if you'd like, you could connect straight to a mongo collection
+from flask_pymongo import PyMongo
 mongo = PyMongo()
+
 login = LoginManager()
 login.login_view = 'auth.login'
 

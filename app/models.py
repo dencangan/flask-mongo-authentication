@@ -1,11 +1,16 @@
-"""Module to contain objects for the app."""
+"""
+Module to contain objects for the app.
+"""
 
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import mongo
 
 
-class User:
-    """User object that can be manipulated with mongo."""
+class User(object):
+    """
+    User object that can be manipulated with mongo.
+    The collection name is 'user_details'.
+    """
 
     def __init__(self, username, email=None, password=None):
         self.username = username
