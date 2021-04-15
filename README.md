@@ -1,10 +1,6 @@
 # flask-mongo
 This is a skeleton web application integrating the Flask framework with MongoDB unlike using traditional relational databases like SQlite3. This project assumes that you have some basic knowledge in MongoDB (PyMongo collections) and Flask.
 
-#### TODO
-- Dockerise the app
-- Some general guide on setting up the environment
-
 ## App Overview
 The app covers user authentication, registration, password encryption and storage with MongoDB. There are 3 pages in the app: 
 
@@ -15,7 +11,7 @@ The app covers user authentication, registration, password encryption and storag
   <br>
   <i>The main login page to enter credentials that will handle the validation and link redirection.</i>
 </p>
-
+<br>
 
 <b>Registration Page</b>
 <p align="center">
@@ -25,7 +21,7 @@ The app covers user authentication, registration, password encryption and storag
   <i>The registration page to handle creation/storage of user details and password encryption in MongoDB.</i>
 </p>
 </p>
-
+<br>
 
 <b>Home Page</b>
 <p align="center">
