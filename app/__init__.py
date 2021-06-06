@@ -4,10 +4,6 @@ from flask import Flask
 from config import Config
 from flask_login import LoginManager
 
-# PyMongo is not actually needed, if you'd like, you could connect straight to a mongo collection
-from flask_pymongo import PyMongo
-mongo = PyMongo()
-
 login = LoginManager()
 login.login_view = 'auth.login'
 
@@ -20,7 +16,6 @@ def create_app(config_class=Config):
 
     app = Flask(__name__)
     app.config.from_object(config_class)
-    mongo.init_app(app)
     login.init_app(app)
 
     from app.auth import bp as auth_bp

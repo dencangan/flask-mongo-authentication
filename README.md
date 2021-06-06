@@ -51,10 +51,12 @@ These are defined as static methods in the object. Our database collection name 
 class User:
     """User object that can be manipulated with mongo."""
 
-    def __init__(self, username, email=None, password=None):
+    def __init__(self, username=None, email=None, password=None):
         self.username = username
         self.email = email
         self.password = password
+        # Your mongo URI defined in config.py
+        self.db = MongoClient(Config.MONGO_URI)["Users"]
 
     @staticmethod
     def is_authenticated():
@@ -77,7 +79,7 @@ A step is required to store the details in a dictionary (NoSQL style) before ins
 ```python
   def register(self):
       """Inserting user details into mongo collection."""
-      mongo.db.user_details.insert_one(self.to_dict())
+      self.db["user_details"].insert_one(self.to_dict())
       print(f"{self.to_dict()} entry created.")
 
   def to_dict(self):
@@ -109,7 +111,7 @@ This function handles the authentication and redirects user to the home page if 
 ```python
 @login.user_loader
 def load_user(username):
-    user = User.get_by_username(username)
+    user = User().get_by_username(username)
     if not user:
         return None
     return User(username=user["name"])
@@ -122,7 +124,7 @@ def login():
 
     login_form = LoginForm()
     if login_form.validate_on_submit():
-        user = User.get_by_username(username=login_form.username.data)
+        user = User().get_by_username(username=login_form.username.data)
         if user is not None and User.check_password(hashed_password=user["password"], 
         password=login_form.password.data):
             print("Password validated.")

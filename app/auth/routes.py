@@ -11,7 +11,7 @@ from flask_login import current_user, login_user, logout_user
 
 @login.user_loader
 def load_user(username):
-    user = User.get_by_username(username)
+    user = User().get_by_username(username)
     if not user:
         return None
     return User(username=user["name"])
@@ -25,7 +25,7 @@ def login():
 
     login_form = LoginForm()
     if login_form.validate_on_submit():
-        user = User.get_by_username(username=login_form.username.data)
+        user = User().get_by_username(username=login_form.username.data)
         if user is not None and User.check_password(hashed_password=user["password"], password=login_form.password.data):
             print("Password validated.")
             print(f"ID: '{user['_id']}' - Username: '{user['name']}' logging in.")

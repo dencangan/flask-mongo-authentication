@@ -1,9 +1,9 @@
 """
 Module to contain objects for the app.
 """
-
+from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
-from app import mongo
+from config import Config
 
 
 class User(object):
@@ -12,10 +12,12 @@ class User(object):
     The collection name is 'user_details'.
     """
 
-    def __init__(self, username, email=None, password=None):
+    def __init__(self, username=None, email=None, password=None):
         self.username = username
         self.email = email
         self.password = password
+        # Your mongo URI defined in config.py
+        self.db = MongoClient(Config.MONGO_URI)["Users"]
 
     @staticmethod
     def is_authenticated():
@@ -42,14 +44,13 @@ class User(object):
         """Validating the hashed password."""
         return check_password_hash(hashed_password, password)
 
-    @classmethod
-    def get_by_username(cls, username):
+    def get_by_username(self, username):
         """Getting user details by username."""
-        return mongo.db.user_details.find_one({"name": username})
+        return self.db["user_details"].find_one({"name": username})
 
     def register(self):
         """Inserting user details into mongo collection."""
-        mongo.db.user_details.insert_one(self.to_dict())
+        self.db["user_details"].insert_one(self.to_dict())
         print(f"{self.to_dict()} entry created.")
 
     def to_dict(self):
